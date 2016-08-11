@@ -1,0 +1,19 @@
+{
+    "chmod": "0755",
+    "directories": [
+        "lib"
+    ],
+    "files": [
+        "LICENSE"
+    ],
+    "finder": [
+        {
+            "name": "*.php",
+            "exclude": ["tests","examples","test.php"],
+            "in": "vendor"
+        }
+    ],
+    "main": "sshman.php",
+    "output": "sshman.phar",
+    "stub": true
+}
