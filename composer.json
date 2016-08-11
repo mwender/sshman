@@ -1,0 +1,15 @@
+{
+    "name": "mwender/sshman",
+    "description": "CLI tool for accessing servers via SSH.",
+    "type": "PHAR",
+    "require": {
+        "wp-cli/php-cli-tools": "^0.11.1"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Michael Wender",
+            "email": "michael@michaelwender.com"
+        }
+    ]
+}
