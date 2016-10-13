@@ -76,7 +76,14 @@ if( 'y' == $full_connection_string ){
 	$server_user = \sshman\lib\fns\helpers\get_server_meta( $server, 'user' );
 
 	if( 'ERROR' != substr( $server_user, 0, 5 ) && ! empty( $server_user ) && ! in_array( $server_user, $users ) ){
-		$users[] = $server_user;
+		if( stristr( $server_user, ',') ){
+			$server_users = explode( ',', $server_user );
+			foreach( $server_users as $user ){
+				$users[] = $user;
+			}
+		} else {
+			$users[] = $server_user;
+		}
 	}
 
 	$select_user_str = '';
