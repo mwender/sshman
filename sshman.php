@@ -125,5 +125,5 @@ $ssh_cmd = trim( \sshman\lib\fns\helpers\get_ssh_connection( $server, $full_conn
 \cli\line();
 \cli\line( 'The following text is in your buffer:' );
 \cli\line( $ssh_cmd );
-exec( 'echo ' . $ssh_cmd . ' | pbcopy' );
+exec( 'echo ' . $ssh_cmd . ' | tr -d \'\\n\' | pbcopy' );
 ?>
