@@ -1,4 +1,5 @@
 {
+    "alias": "sshman.phar",
     "chmod": "0755",
     "directories": [
         "lib"
@@ -14,6 +15,6 @@
         }
     ],
     "main": "sshman.php",
-    "output": "sshman.phar",
+    "output": "bin/sshman.phar",
     "stub": true
 }
