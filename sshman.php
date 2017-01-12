@@ -4,12 +4,29 @@ require 'phar://sshman.phar/vendor/autoload.php';
 require 'phar://sshman.phar/lib/fns/fns.helpers.php';
 
 /**
+ * OS CHECK
+ *
+ * `sshman` currently only supports Mac OS X because I'm
+ * adding the output to the user's buffer via `pbpaste`.
+ *
+ * Todo: Detect the user's OS, and vary how we're adding
+ * text to the user's buffer.
+ */
+$os_name = php_uname( 's' );
+if( ! stristr( $os_name, 'Darwin' ) ){
+	\cli\err( 'ERROR: I\'m sorry, but `sshman` currently just supports Mac OS X.' );
+	exit;
+}
+
+/**
  * SERVERS loaded from ~/.servers in CSV format:
  *
  * - server_name,ip,user(optional)
  * - server.example.com,123.456.78.99,sysadmin
+ * - server2.example.com,223.14.56.89,"sysadmin,webdev,user3"
  */
 
+// Check for ~/.servers
 $csv = $_SERVER['HOME'] . '/.servers';
 if( ! file_exists( $csv ) ){
 	\cli\err( 'ERROR: File `~/.servers` not found. Please add a `.servers` file to your home directory.' );
