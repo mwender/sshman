@@ -22,10 +22,14 @@ function get_ssh_connection( $key, $full_connection_string = 'y', $user = '' ){
 
 	$ip = $servers[$key]['ip'];
 
-	if( empty( $user ) )
-		$user = 'serverpilot';
+	$port = '';
+	if( 22 != $servers[$key]['port'] )
+		$port = '-p ' . $servers[$key]['port'] . ' ';
 
-	$ssh_connection = ( 'y' != $full_connection_string )? $ip : 'ssh ' . $user . '@' . $ip;
+	if( empty( $user ) )
+		$user = 'root';
+
+	$ssh_connection = ( 'y' != $full_connection_string )? $ip : 'ssh ' . $port . $user . '@' . $ip;
 
 	return $ssh_connection;
 }
