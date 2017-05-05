@@ -1,2 +1,5 @@
 vendor/
 sshman.phar
+sshman.phar.pubkey
+.travis/phar-private.pem
+sshman.phar.version

@@ -1,6 +1,7 @@
 {
-    "alias": "sshman.phar",
+    "algorithm": "OPENSSL",
     "chmod": "0755",
+    "compression": "GZ",
     "directories": [
         "lib"
     ],
@@ -15,7 +16,10 @@
         }
     ],
     "git-version": "package_version",
+    "intercept": true,
+    "key": ".travis/phar-private.pem",
     "main": "sshman.php",
     "output": "bin/sshman.phar",
+    "alias": "sshman.phar",
     "stub": true
 }
