@@ -84,6 +84,11 @@ if( ! empty( $argv[1] ) ){
 	switch ( $parameter1 ) {
 		case 'update':
 			require_once('lib/fns/update.php');
+			exit;
+		break;
+		case 'rollback':
+			require_once('lib/fns/rollback.php');
+			exit;
 		break;
 	}
 }
