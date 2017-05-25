@@ -3,7 +3,8 @@
     "description": "CLI tool for accessing servers via SSH.",
     "type": "PHAR",
     "require": {
-        "wp-cli/php-cli-tools": "^0.11.1"
+        "wp-cli/php-cli-tools": "^0.11.1",
+        "padraic/phar-updater": "^1.0"
     },
     "license": "MIT",
     "authors": [

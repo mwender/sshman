@@ -78,6 +78,16 @@ $users = array(
 // LOGIC
 echo exec( 'clear' );
 
+// Sub-commands via the first argument passed
+if( ! empty( $argv[1] ) ){
+	$parameter1 = $argv[1];
+	switch ( $parameter1 ) {
+		case 'update':
+			require_once('lib/fns/update.php');
+		break;
+	}
+}
+
 // Select a server
 $servers_table->display();
 
