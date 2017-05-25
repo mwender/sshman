@@ -2,8 +2,8 @@
 use Humbug\SelfUpdate\Updater;
 
 $updater = new Updater();
-$updater->getStrategy()->setPharUrl( 'https://mwender.github.io/sshman/bin/sshman.phar' );
-$updater->getStrategy()->setVersionUrl( 'https://mwender.github.io/sshman/bin/sshman.phar.version' );
+$updater->getStrategy()->setPharUrl( 'https://mwender.github.io/sshman/sshman.phar' );
+$updater->getStrategy()->setVersionUrl( 'https://mwender.github.io/sshman/sshman.phar.version' );
 try {
     $result = $updater->update();
     if (! $result) {
