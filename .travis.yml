@@ -26,5 +26,8 @@ install:
 - travis_retry composer install --no-interaction
 - composer info -i
 
+script:
+- ./vendor/bin/phpunit # If you have tests
+
 notifications:
   email: true
