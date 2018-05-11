@@ -1,3 +1,5 @@
+![sshman - manage your SSH connections](sshman/lib/img/sshman-image.png)
+
 # SSH Manager
 
 A command line tool for managing your ssh connections.
