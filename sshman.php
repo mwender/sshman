@@ -21,8 +21,8 @@ if( ! stristr( $os_name, 'Darwin' ) ){
 /**
  * SERVERS loaded from ~/.servers in CSV format:
  *
- * - server_name,ip,user(optional)
- * - server.example.com,123.456.78.99,sysadmin
+ * - server_name,ip,user(optional),port(optional),ssh_identity(optional)
+ * - server.example.com,123.456.78.99,sysadmin,,~/.ssh/identity
  * - server2.example.com,223.14.56.89,"sysadmin,webdev,user3"
  */
 
@@ -43,6 +43,7 @@ if ( false !== ( $fp = fopen( $csv, 'r' ) ) ) {
 		);
 		$servers[$row]['user'] = ( isset( $data[2] ) && ! empty( $data[2] ) )? $data[2] : '---' ;
 		$servers[$row]['port'] = ( isset( $data[3] ) && ! empty( $data[3] ) )? $data[3] : '22' ;
+		$servers[$row]['id_file'] = ( isset( $data[4] ) && ! empty( $data[4] ) )? $data[4] : '' ;
 		$row++;
 	}
 }
@@ -54,17 +55,19 @@ usort( $servers, function( $a, $b ){
 // Display servers in a table
 $servers_display = [];
 foreach( $servers as $key => $server ){
-	$user = ( 25 < strlen( $server['user'] ) )? substr( $server['user'], 0, 22 ) . '...' : $server['user'] ;
+	$ip = ( 20 < strlen( $server['ip'] ) )? substr( $server['ip'], 0, 17 ) . '...' : $server['ip'] ;
+	$user = ( 20 < strlen( $server['user'] ) )? substr( $server['user'], 0, 17 ) . '...' : $server['user'] ;
 	$servers_display[$key] = array(
 		$key,
 		$server['name'],
-		$server['ip'],
+		$ip,
 		$user,
 		$server['port'],
+		$server['id_file'],
 	);
 }
 
-$headers = array( 'ID', 'Name', 'IP', 'User', 'Port' );
+$headers = array( 'ID', 'Name', 'IP', 'User', 'Port', 'Identity' );
 $servers_table = new \cli\Table();
 $servers_table->setHeaders( $headers );
 $servers_table->setRows( $servers_display );

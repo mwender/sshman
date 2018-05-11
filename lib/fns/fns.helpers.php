@@ -26,10 +26,14 @@ function get_ssh_connection( $key, $full_connection_string = 'y', $user = '' ){
 	if( 22 != $servers[$key]['port'] )
 		$port = '-p ' . $servers[$key]['port'] . ' ';
 
+	$identity = '';
+	if( ! empty( $servers[$key]['id_file'] ) )
+		$identity = '-i ' . $servers[$key]['id_file'] . ' ';
+
 	if( empty( $user ) )
 		$user = 'root';
 
-	$ssh_connection = ( 'y' != $full_connection_string )? $ip : 'ssh ' . $port . $user . '@' . $ip;
+	$ssh_connection = ( 'y' != $full_connection_string )? $ip : 'ssh ' . $identity . $port . $user . '@' . $ip;
 
 	return $ssh_connection;
 }
