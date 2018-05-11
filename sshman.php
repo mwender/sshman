@@ -1,7 +1,7 @@
 #!/usr/bin/env php
 <?php
-require 'phar://sshman.phar/vendor/autoload.php';
-require 'phar://sshman.phar/lib/fns/fns.helpers.php';
+require 'vendor/autoload.php';
+require 'lib/fns/fns.helpers.php';
 
 /**
  * OS CHECK
