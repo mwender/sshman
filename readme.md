@@ -2,9 +2,20 @@
 
 A command line tool for managing your ssh connections.
 
+## Installation
+
+`sshman` is available for installation on your system via [PHIVE](https://phar.io) Once you've installed PHIVE on your system, you can install `sshman` with the following command:
+
+$`phive install mwender/sshman`
+
+Installing with PHIVE takes care of the following:
+
+- Verifies the sshman.phar against my GPG key
+- Installs `sshman` on your system with an `sshman` alias
+
 ## Setup
 
-Add a `.servers` file to your user's $HOME directory. Format `.servers` like so:
+Add a `.servers` file to your $HOME directory. Format `.servers` like so:
 
 ```
 server_name,ip,user(optional),port(optional),ssh_identity(optional)
