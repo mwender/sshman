@@ -1,8 +1,12 @@
+# sshman
+
 ![sshman - manage your SSH connections](https://raw.githubusercontent.com/mwender/sshman/master/lib/img/sshman-image.png)
 
-# SSH Manager
-
 A command line tool for managing your ssh connections.
+
+## Demo
+
+[![asciicast](https://asciinema.org/a/117973.png)](https://asciinema.org/a/117973)
 
 ## Installation
 
