@@ -1,4 +1,4 @@
-![sshman - manage your SSH connections](sshman/lib/img/sshman-image.png)
+![sshman - manage your SSH connections](https://raw.githubusercontent.com/mwender/sshman/master/lib/img/sshman-image.png)
 
 # SSH Manager
 
