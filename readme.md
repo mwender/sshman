@@ -4,10 +4,6 @@
 
 A command line tool for managing your ssh connections.
 
-## Demo
-
-[![asciicast](https://asciinema.org/a/117973.png)](https://asciinema.org/a/117973)
-
 ## Installation
 
 *sshman* is available for installation on your system via [PHIVE](https://phar.io). Once you've installed PHIVE on your system, you can install *sshman* with the following command:
@@ -30,6 +26,9 @@ server_name,ip,user(optional),port(optional),ssh_identity(optional)
 server.example.com,123.456.78.99,sysadmin,,~/.ssh/identity
 server2.example.com,223.14.56.89,"sysadmin,webdev,user3",2222
 ```
+## Demo
+
+[![asciicast](https://asciinema.org/a/117973.png)](https://asciinema.org/a/117973)
 
 ## Building/Compiling
 
