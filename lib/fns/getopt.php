@@ -21,8 +21,9 @@ function display_file( $file ){
   if( ! file_exists( $file ) )
     return false;
 
-  $contents = file( $file );
-  foreach( $contents as $line ){
+  $contents = file_get_contents( $file );
+  $lines = explode("\n", $contents );
+  foreach( $lines as $line ){
     if( stristr( $line, '{version}') ){
       $version = file_get_contents('VERSION');
       $line = str_replace( '{version}', $version, $line );
@@ -30,7 +31,7 @@ function display_file( $file ){
 
     if( '# ' == substr( $line, 0, 2 ) )
       $line = "\033[33m" . substr($line, 2 ) . "\033[0m";
-    echo $line;
+    echo $line . "\n";
   }
 
   return true;
