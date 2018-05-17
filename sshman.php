@@ -1,7 +1,8 @@
 #!/usr/bin/env php
 <?php
 require 'vendor/autoload.php';
-require 'lib/fns/fns.helpers.php';
+require 'lib/fns/helpers.php';
+require 'lib/fns/getopt.php';
 
 /**
  * OS CHECK
@@ -80,21 +81,6 @@ $users = array(
 
 // LOGIC
 echo exec( 'clear' );
-
-// Sub-commands via the first argument passed
-if( ! empty( $argv[1] ) ){
-	$parameter1 = $argv[1];
-	switch ( $parameter1 ) {
-		case 'update':
-			require_once('lib/fns/update.php');
-			exit;
-		break;
-		case 'rollback':
-			require_once('lib/fns/rollback.php');
-			exit;
-		break;
-	}
-}
 
 // Select a server
 $servers_table->display();

@@ -1,0 +1,20 @@
+# [SSHman](https://github.com/mwender/sshman) - Version {version}
+
+# NAME
+  sshman -- manage your SSH connections
+
+# SYNOPSIS
+  sshman [-vh]
+
+# DESCRIPTION
+  SSHman requires that you have a .servers file setup in your $HOME directory. Format your .servers file like so (don't include the header row):
+
+  server_name,ip,user(optional),port(optional),ssh_identity(optional)
+  server.example.com,123.456.78.99,sysadmin,,~/.ssh/identity
+  server2.example.com,223.14.56.89,"sysadmin,webdev,user3",2222
+
+  The following options are available:
+
+  -h, --help      displays this HELP file
+
+  -v, --version   prints currently installed version

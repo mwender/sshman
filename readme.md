@@ -1,14 +1,14 @@
-# sshman
+# SSHman - *manage your SSH connections*
 
-![sshman - manage your SSH connections](https://raw.githubusercontent.com/mwender/sshman/master/lib/img/sshman-image.png)
+![SSHman - manage your SSH connections](https://raw.githubusercontent.com/mwender/sshman/master/lib/img/sshman-image.png)
 
-A command line tool for managing your ssh connections.
+*SSHman* is a command line tool for managing your ssh connections.
 
 ## Installation
 
-*sshman* is available for installation on your system via [PHIVE](https://phar.io). Once you've installed PHIVE on your system, you can install *sshman* with the following command:
+*SSHman* is currently available for MacOS only. Install it on your system via [PHIVE](https://phar.io). Once you've installed PHIVE on your system, you can install *SSHman* with the following command:
 
-$`phive install mwender/sshman`
+$`phive install sshman`
 
 Installing with PHIVE takes care of the following:
 
@@ -30,6 +30,17 @@ server2.example.com,223.14.56.89,"sysadmin,webdev,user3",2222
 
 [![asciicast](https://asciinema.org/a/117973.png)](https://asciinema.org/a/117973)
 
+## Changelog
+
+### Version 1.0.0
+
+- Initial release
+- Supports multiple users per server by specifying users in a comma separated list (e.g. `admin,sysadmin,root,user1,user2`)
+- Option to specify the SSH port for your connection
+- Option to specify the identity file for your connection
+
+---
+
 ## Building/Compiling
 
-Build sshman.phar by running `box build`.
+I use [Box](https://github.com/box-project/box2) to build *SSHman*. Once you have *Box* installed on your system, you can build *sshman.phar* by running `box build`.
