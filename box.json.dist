@@ -5,7 +5,9 @@
         "lib"
     ],
     "files": [
-        "LICENSE"
+        "LICENSE",
+        "VERSION",
+        "HELP"
     ],
     "finder": [
         {
