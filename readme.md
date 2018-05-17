@@ -32,6 +32,10 @@ server2.example.com,223.14.56.89,"sysadmin,webdev,user3",2222
 
 ## Changelog
 
+### Version 1.0.2
+
+- Removing phar://sshman.phar/ stream references for PHIVE compatiblity
+
 ### Version 1.0.1
 
 - Bugfix: Including HELP and VERSION files

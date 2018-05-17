@@ -4,7 +4,7 @@ namespace sshman\lib\fns\getopt;
 
 $options = getopt( 'vh', ['version','help'] );
 if( isset( $options['v'] ) || isset( $options['version'] ) ){
-    $version = file_get_contents('phar://sshman.phar/VERSION');
+    $version = file_get_contents('VERSION');
     echo "\033[33m" . '[SSHman](https://github.com/mwender/sshman) - Version ' . $version . "\033[0m" . "\n\n";
     display_file( 'LICENSE' );
     exit;
@@ -21,10 +21,10 @@ function display_file( $file ){
   if( ! file_exists( $file ) )
     return false;
 
-  $contents = file( 'phar://sshman.phar/' . $file );
+  $contents = file( $file );
   foreach( $contents as $line ){
     if( stristr( $line, '{version}') ){
-      $version = file_get_contents('phar://sshman.phar/VERSION');
+      $version = file_get_contents('VERSION');
       $line = str_replace( '{version}', $version, $line );
     }
 

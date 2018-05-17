@@ -1,14 +1,5 @@
 #!/usr/bin/env php
 <?php
-// Setup phar://sshman.phar/ stream
-try {
-    $p = new Phar('sshman.phar', FilesystemIterator::CURRENT_AS_FILEINFO | FilesystemIterator::KEY_AS_FILENAME, 'sshman.phar');
-} catch (UnexpectedValueException $e) {
-    die('Could not open sshman.phar');
-} catch (BadMethodCallException $e) {
-    echo 'technically, this cannot happen';
-}
-
 require 'vendor/autoload.php';
 require 'lib/fns/helpers.php';
 require 'lib/fns/getopt.php';
