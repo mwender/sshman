@@ -26,11 +26,23 @@ server_name,ip,user(optional),port(optional),ssh_identity(optional)
 server.example.com,123.456.78.99,sysadmin,,~/.ssh/identity
 server2.example.com,223.14.56.89,"sysadmin,webdev,user3",2222
 ```
+
+## Options
+
+- `-h, --help` - displays HELP
+- `-s, --sftp` -  returns an SFTP connection string
+- `-v, --version` - displays VERSION info
+
+
 ## Demo
 
 [![asciicast](https://asciinema.org/a/117973.png)](https://asciinema.org/a/117973)
 
 ## Changelog
+
+### Version 1.0.3
+
+- Adding `-s, --sftp` option for returning an SFTP connection string
 
 ### Version 1.0.2
 

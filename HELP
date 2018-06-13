@@ -4,7 +4,7 @@
   sshman -- manage your SSH connections
 
 # SYNOPSIS
-  sshman [-vh]
+  sshman [-vhs]
 
 # DESCRIPTION
   SSHman requires that you have a .servers file setup in your $HOME directory. Format your .servers file like so (don't include the header row):
@@ -16,5 +16,7 @@
   The following options are available:
 
   -h, --help      displays this HELP file
+
+  -s, --sftp      returns an SFTP connection string
 
   -v, --version   prints currently installed version

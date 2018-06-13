@@ -18,7 +18,7 @@ function get_server_meta( $key, $meta ){
 }
 
 function get_ssh_connection( $key, $full_connection_string = 'y', $user = '' ){
-	global $servers;
+	global $servers, $options;
 
 	$ip = $servers[$key]['ip'];
 
@@ -33,7 +33,9 @@ function get_ssh_connection( $key, $full_connection_string = 'y', $user = '' ){
 	if( empty( $user ) )
 		$user = 'root';
 
-	$ssh_connection = ( 'y' != $full_connection_string )? $ip : 'ssh ' . $identity . $port . $user . '@' . $ip;
+	$protocol = ( isset( $options['s'] ) || isset( $options['sftp'] ) )? 'sftp' : 'ssh';
+
+	$ssh_connection = ( 'y' != $full_connection_string )? $ip : $protocol . ' ' . $identity . $port . $user . '@' . $ip;
 
 	return $ssh_connection;
 }

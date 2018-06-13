@@ -2,7 +2,7 @@
 
 namespace sshman\lib\fns\getopt;
 
-$options = getopt( 'vh', ['version','help'] );
+$options = getopt( 'vhs', ['version','help','sftp'] );
 if( isset( $options['v'] ) || isset( $options['version'] ) ){
     $version = file_get_contents('VERSION');
     echo "\033[33m" . '[SSHman](https://github.com/mwender/sshman) - Version ' . $version . "\033[0m" . "\n\n";
