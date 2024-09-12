@@ -1,3 +1,6 @@
+> [!NOTE]
+> 09/12/2024 - *SSHman* has been replaced by [SSHConn](https://github.com/mwender/sshconn).
+
 # SSHman - *manage your SSH connections*
 
 ![SSHman - manage your SSH connections](https://raw.githubusercontent.com/mwender/sshman/master/lib/img/sshman-image.png)
